@@ -53,7 +53,3 @@ namespace Mission2
         }
     }
 }
-
-//Tools:
-//Console.WriteLine(string.Join(", ", spots));
-//Console.WriteLine((1) + ": " + spots[5]);
