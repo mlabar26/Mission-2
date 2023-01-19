@@ -1,4 +1,4 @@
-﻿//Marcus LaBar (Section 2) - Mission 2
+﻿//Marcus LaBar (Section 2) - Mission #2 Assignment
 
 using System;
 
