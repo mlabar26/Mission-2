@@ -8,14 +8,15 @@ namespace Mission2
     {
         static void Main(string[] args)
         {
+            //Welcome statement
             Console.WriteLine("Welcome to the dice throwing simulator! " +
                 "How many dice rolls would you like to simulate?");
-            int choosenRolls = Convert.ToInt32(Console.ReadLine());
+            float choosenRolls = Convert.ToSingle(Console.ReadLine());
 
             //Creates 12 spots in an array
             int[] spots = new int[11];
 
-            //Initializes random class
+            //Creates random instance
             Random rnd = new Random();
 
             //Loops through each roll
@@ -26,29 +27,30 @@ namespace Mission2
 
                 int dieTotal = die1 + die2;
 
-                //Adds 1 to the position
+                //Adds 1 to the position afterwards
                 spots[dieTotal]++;
             }
 
-            Console.WriteLine("DICE ROLLING SIMULATION RESULTS: Each '*' represents 1% " +
+            Console.WriteLine("\nDICE ROLLING SIMULATION RESULTS: Each '*' represents 1% " +
                 "of the total number of rolls. Total number of rolls = " + choosenRolls);
 
-            //Loops through each position in array
-            for (int i = 0; i < spots.Length; i++)
+            //Loops through array
+            for (int k = 0; k < spots.Length; k++)
             {
-                //Calculate %, new variable, round it
-                double calc = (spots[i] / choosenRolls) * 100;
+                float calc = (spots[k] / (choosenRolls)) * 100;
                 Math.Round(calc);
 
-                string asterisk = "*";
+                Console.Write((k + 2) + ":");
 
-                //For loop to print asterisk
+                //Loop to print asterisks
                 for (int j = 0; j < calc; j++)
                 {
-                    asterisk = asterisk + asterisk;
+                    string asterisk = "*";
+                    Console.Write(asterisk);
                 }
 
-                Console.WriteLine((i + 2) + ":" + asterisk);
+                //Keeps asterisks on same line
+                Console.WriteLine();
             }
         }
     }
